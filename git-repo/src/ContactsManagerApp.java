@@ -15,7 +15,6 @@ public class ContactsManagerApp {
     }
 
 
-
     public static void initApp() {
         boolean userContinue = true;
 
@@ -115,6 +114,7 @@ public class ContactsManagerApp {
 
     public static Contact addContact() {
         sc.nextLine();
+        boolean overwriteContact;
         System.out.print("Enter name (e.g. \"John Smith\"): ");
         String name = sc.nextLine();
         System.out.print("Enter phone number (e.g. \"1234567890\"): ");
@@ -132,6 +132,8 @@ public class ContactsManagerApp {
             number = number.substring(0,3) +
                     "-" + number.substring(3);
         }
+
+
         System.out.println("New Contact Added.\n\n");
         return new Contact(name, number);
     }
@@ -197,6 +199,5 @@ public class ContactsManagerApp {
         } catch (IOException e) {
             System.out.printf("ERROR: %s", e);
         }
-
     }
 }
